@@ -1,7 +1,7 @@
 const ping = require('ping');
 const express = require('express')
 const app = express()
-app.all('/', (req, res) => {
+app.all('/', async (req, res) => {
     const host = req.query.host;
     const isAlive = await checkHost(host);
     res.send({
